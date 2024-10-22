@@ -188,10 +188,12 @@
 main{
    position: relative;
    border-radius: 20px;
-   padding: 20px 0px;
+   padding: 20px;
    margin-bottom: 20px;
    width: 100%;
    z-index: 0;
+   background: #ffffff;
+
 }
 .main{
    &__items{   
@@ -200,7 +202,9 @@ main{
       grid-template-columns: repeat(5 ,1fr);
       flex-wrap: wrap;
       grid-gap: 10px;
-      justify-items: center
+      justify-items: center;
+  
+    
    }
 
    &__item{
@@ -422,8 +426,12 @@ main{
 
 }
 @media screen and (max-width:1250px) {
-   body ,main{
+   body {
       background: #ffffff;
+   }
+   main{
+      background: #ffffff;
+      padding:0px ;
    }
    .desctop{
       background: #ffffff;
@@ -488,14 +496,16 @@ main{
 
 
    .pay{
+      height: 100vh;
+
       &__wrap{
          position: fixed;
          max-width: none;
          max-height: none;
          align-items: center;
          border-radius: 0px;
-         width: 100%;
-         height: 100%;
+         // width: 100%;
+         // height: 100%;
          padding: 20px
       }
 
@@ -509,6 +519,9 @@ main{
 
 
 @media screen and (max-width:950px) {
+   .desctop{
+      padding: 25px 5px;
+   }
 
    .main__items{   
       grid-template-columns:repeat( 3, 1fr);   
@@ -525,93 +538,79 @@ main{
 }
 
 @media screen and (max-width:470px) {
-
-   .main__items{   
-      grid-template-columns:repeat( 1, auto);   
+   .main{
+      &__items{   
+         grid-template-columns:repeat( 2, 1fr);   
+      }
+   
+      &__item{
+         @include regular; 
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         gap: 10px;
+         background: #ffff;
+         width: fit-content;
+         
+         width: 122px;
+         border: 1px solid #a6a6a64f;
+         padding-bottom: 10px;
+         border-radius: 20px;  
+         cursor: pointer;
+         &::before{
+            @include bold;
+            position: absolute;
+            content: '1';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            font-size: 50px;
+            border-radius: 18px;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            height: 120px;
+            background: #dddcdc96;
+         }   
+   
+      }
+   
+      &__item-img{
+         position: relative;
+         width: 120px;
+         height: 120px;
+         border-radius: 20px;
+         object-position: bottom;
+         object-fit:cover;
+      }
+   
+      &__item-name{
+         width: 110px;
+         // overflow: hidden;
+         // text-overflow: ellipsis;
+         // white-space: nowrap;
+      }
+   
+      // &__item-weight{
+      //    font-size: 14px;
+      // }
    }
 
 }
 
+@media screen and (max-width:265px) {
+   .main{
+      &__items{   
+         grid-template-columns:repeat( 1, 1fr);   
+      }
+   }
+}
 
 
-// @media screen and (max-width:682px) {
-//    .desctop{
-//       padding: 25px 5px;
-//    }
-//    .main{
-//       &__items{
-//          display: flex;
-//          align-items: center;
-//          justify-content:center;
-//          gap: 5px;
-//       }
-
-//       &__item{
-//          max-width: 175px;
-//          min-width:none ;
-//          width: 100%;   
-//       }
-   
-//       &__item-img{
-//          max-width:175px;
-//          min-width: none;
-//       }
-   
-//       &__item-name{
-//          max-width: 170px;
-//          min-width: none;
-//       }
-//    }
-// }
 
 
-// @media screen and (max-width:383px) {
-//       .main{   
-//          &__item{
-//             width: 100%;
-//             max-width: 159px;
-//             min-width:none ;
-//             width: 100%;   
-//          }
-      
-//          &__item-img{
-//             max-width: 150px;
-//             min-width:none ;
-//          }
-      
-//          &__item-name{
-//             max-width: 150px;
-//             min-width: none;
-//          }
-//       }
-   
-//    }
 
-//    @media screen and (max-width:349px) {
-//       .main{  
-//          &__items{
-//             gap: 20px;
-//          } 
-//          &__item{
-//             width: 100%;
-//             height: 100%;
-//             max-height: 350px;
-//             max-width: 340px;
-//             min-width:none ;
-//          }
-      
-//          &__item-img{
-//             width: 100%;
-//             max-width: 340px;
-//             min-width:none ;
-//          }
-      
-//          &__item-name{
-              
-//             max-width: 340px;
-//             min-width: none;
-//          }
-//       }
-   
-//    }
 
